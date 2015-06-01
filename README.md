@@ -1,3 +1,5 @@
+[![Circle CI](https://circleci.com/gh/NekoTashi/todolist.svg?style=svg)](https://circleci.com/gh/NekoTashi/todolist)
+
 # TODO list App
 API Rest app to manage task lists
 
