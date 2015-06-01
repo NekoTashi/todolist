@@ -24,11 +24,10 @@ METHOD: POST
 
 DATA:
 
-`
 * username
 * password
 * email
-`
+
 
 URL: `/accounts/api-token-auth/`
 
@@ -38,10 +37,9 @@ METHOD: POST
 
 DATA:
 
-`
 * username
 * password
-`
+
 
 ### Task endpoints
 URL: `/todo/tasks/`
@@ -59,9 +57,8 @@ METHOD: POST
 
 DATA:
 
-`
 * name
-`
+
 
 URL: `/todo/tasks/<PUT TASK PK HERE>/`
 
@@ -71,10 +68,9 @@ METHOD: PATCH
 
 DATA:
 
-`
 * name
 * checked
-`
+
 
 ## Live sample
 ### ENDPOINTS
