@@ -16,7 +16,7 @@ class UserRegisterViewTestCase(test.APITestCase):
 
 	def test_create_user(self):
 		"""
-		Test the user creation
+		Test the user creation.
 		"""
 		url = reverse('user-register')
 		data = {
@@ -40,7 +40,7 @@ class ObtainAuthTokenViewTestCase(test.APITestCase):
 
 	def test_obtain_auth_token(self):
 		"""
-		Test get auth token
+		Test get auth token.
 		"""
 		url = reverse('api-token-auth')
 		data = {

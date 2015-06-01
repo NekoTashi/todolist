@@ -23,33 +23,34 @@ class TaskViewSetTestCase(test.APITestCase):
 		self.client = test.APIClient()
 		self.client.credentials(HTTP_AUTHORIZATION='Token ' + self.token.key)
 
+		self.test_task = Task.objects.create(user=self.user,
+												name='test task update name')
+
+		self.create_list_url = reverse('task-list')
+		self.read_update_url = reverse('task-detail',
+										kwargs={'pk': self.test_task.pk})
+
 	def test_list_task_viewset(self):
 		"""
 		Test list the user tasks.
 		"""
-		url = reverse('task-list')
-		response = self.client.get(url)
+		response = self.client.get(self.create_list_url)
 		self.assertEqual(response.status_code, status.HTTP_200_OK)
 
 	def test_create_task_viewset(self):
 		"""
 		Test create a user task.
 		"""
-		url = reverse('task-list')
 		data = {'name': 'test task create name'}
-		response = self.client.post(url, data, format='json')
+		response = self.client.post(self.create_list_url, data, format='json')
 		self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
 	def test_update_task_viewset(self):
 		"""
 		Test update a user task.
 		"""
-		test_task = Task.objects.create(user=self.user,
-										name='test task update name')
-		
-		detail_url = reverse('task-detail', kwargs={'pk': test_task.pk})
 		data_to_update = {'checked': True}
-		response = self.client.patch(detail_url,
+		response = self.client.patch(self.read_update_url,
 										data_to_update,
 										format='json')
 		self.assertEqual(response.status_code, status.HTTP_200_OK)
