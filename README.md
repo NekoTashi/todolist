@@ -77,26 +77,26 @@ DATA:
 #### Create a user
 ```
 curl -v -X POST http://localhost:8000/accounts/ \
--H 'Content-type: application/json' \
--d '{"username":"foo","password":"bar","email":"foo@bar.com"}' \
-| python -m json.tool
+	-H 'Content-type: application/json' \
+	-d '{"username":"foo","password":"bar","email":"foo@bar.com"}' \
+	| python -m json.tool
 ```
 
 #### Get token auth
 ```
 curl -v -X POST http://localhost:8000/accounts/api-token-auth/ \
--H 'Content-type: application/json' \
--d '{"username":"foo","password":"bar"}' \
-| python -m json.tool
+	-H 'Content-type: application/json' \
+	-d '{"username":"foo","password":"bar"}' \
+	| python -m json.tool
 ```
 
 #### Create a user task
 ```
 curl -v -X POST http://localhost:8000/todo/tasks/ \
--H 'Content-type: application/json' \
--H 'Authorization: Token <PUT TOKEN AUTH HERE>' \
--d '{"name":"test task name"}' \
-| python -m json.tool
+	-H 'Content-type: application/json' \
+	-H 'Authorization: Token <PUT TOKEN AUTH HERE>' \
+	-d '{"name":"test task name"}' \
+	| python -m json.tool
 ```
 
 #### Get all user tasks
