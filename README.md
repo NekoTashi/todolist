@@ -9,11 +9,12 @@ API Rest app to manage task lists
 0. install python2 and virtualenvwrapper
 1. mkvirtualenv todolistapi
 2. cdvirtualenv
-3. cd todo
-4. pip install -r requirements.txt
-5. python manage.py migrate
-6. python manage.py createsuperuser  # Optional
-7. python manage.py runserver
+3. git clone https://github.com/NekoTashi/todolist.git
+4. cd todo
+5. pip install -r requirements.txt
+6. python manage.py migrate
+7. python manage.py createsuperuser  # Optional
+8. python manage.py runserver
 ```
 
 
